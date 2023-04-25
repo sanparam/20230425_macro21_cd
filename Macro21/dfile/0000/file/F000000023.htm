@@ -1,0 +1,372 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Draft//EN">
+<html>
+
+<head>
+<title>Visual Studio Readme</title>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=KS_C_5601-1987">
+<BODY BGCOLOR="#FFFFFF" link="#0000FF" vlink="#660066" onclick="checkExpand()">
+<font face="굴림,Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">
+
+<!------------------------Scripting---------------------->
+
+<script language="JSCRIPT">
+
+  function checkExpand( )
+  {
+     if ("" != event.srcElement.id)
+     {
+        var ch = event.srcElement.id + "Child";
+        var el = document.all[ch];
+        if (null != el)
+        {
+           el.style.display = "none" == el.style.display ? "" : "none";
+           if (el.style.display != "none")
+           event.returnValue=false;
+        }
+     }
+  }
+
+</script>
+
+<!------------------Readme Intro---------------------------------------->
+
+<h1>Visual Studio Readme</h1>
+
+<p>&copy; 1998 Microsoft Corporation. All rights reserved. </p>
+<P>여기에서 언급된 다른 제품의 이름과 회사 이름은 해당 소유권자의 등록 상표입니다.</P>
+<p>
+<p><i>Visual Studio Readme</i>에는 Microsoft&reg; Visual Studio&trade; 6.0 -- Windows&reg; 및 인터넷용 개발 시스템에 대한 핵심적인 내용이 들어 있습니다. 이 내용은 제품군에 포함된 모든 제품이나 다수의 제품에 적용될 수 있습니다. 이 Readme는 <i>MSDN Library Visual Studio 6.0</i> 설명서의 내용을 업데이트한 것입니다.</p>
+<p><i>Visual Studio Readme</i>는 Visual Studio 제품군에 포함된 Readme &#34;그룹&#34; 중 하나입니다. 모든 제품의 Readme 파일은 Visual Studio Disk 1의 루트에 있습니다. 이 Readme 파일은 install.htm과 여러 개의 readme<i>XX</i>.htm(여기에서 <i>XX</i>XX는 제품을 표시) 파일로 이루어져 있으며 사용자가 정보를 신속하게 찾아볼 수 있도록 널리 통용되는 웹 기술을 사용하였습니다. 이 파일들은 Microsoft&reg; Internet Explorer 4.0과 같은 웹 브라우저나 메모장에서 볼 수 있습니다. </p>
+
+<h5><a class=ex href="#" title="내용을 보거나 숨기려면 여기를 누릅니다." id="PrintingInstructions">Microsoft Internet Explorer에서 모든 Readme 파일을 한꺼번에 인쇄하는 방법은?</a></h5>
+
+<div id="PrintingInstructionsChild" style="display:none">
+
+<a name="#ieinstructions"></a>
+<blockquote>
+<ol>
+<li>Microsoft Internet Explorer에서 readme<i>XX</i>.htm 파일이나 install.htm 파일을 엽니다.</li>
+<li>[파일] 메뉴에서 [인쇄]를 누릅니다.</li>
+<li>[인쇄] 대화 상자에서 원하는 인쇄 옵션을 설정합니다.</li>
+<li>[모든 연결 문서 인쇄]를 선택하고 [확인]을 누릅니다. </li></ol> 
+</blockquote>
+</div>
+<p>
+<hr align=left color=black SIZE=1 width=320>
+<!-----------------------TOC--------------------------------->
+
+<p>
+<h3>목차</h3>
+<blockquote><b>메모:</b> &nbsp;&nbsp;&nbsp; 이 Readme에서 항목을 검색할 때는 반드시 목차에 있는 모든 제목을 확장하십시오. 이렇게 하면 목차의 제목을 통해 항목을 검색할 수 있습니다. 
+</blockquote>
+</p>
+
+<!-------------------Section 1---------------->
+
+<h5><a class=ex href="#" title="내용을 보거나 숨기려면 여기를 누릅니다." id="VisualStudioIssues">일반적인 Visual Studio 문제</a></h5>
+
+<div id="VisualStudioIssuesChild">
+
+	<blockquote>
+	
+<a href="install.htm" title="install.htm으로 갑니다.">설치 정보</a> (install.htm)에서는 제품 병행 설치를 포함하여 Visual Studio 6.0 제품군에 영향을 미치는 일반적인 설치 문제를 다루고 있습니다.</blockquote>
+
+	<blockquote>	
+<a href="#sqlserverdebugger">Microsoft SQL Server는 SQL Debugging을 위하여 &#34;시스템 계정&#34;이 아닌 유효한 사용자 계정에서만 실행해야 함</a></blockquote>
+
+	<blockquote>
+<a href="#webregistration">웹에서 Visual Studio 6.0 제품 등록하기</a></blockquote>
+	
+	<blockquote>
+<a href="#viewinginwindows98">Windows 98에서 Visual Studio 창 보기 </a></blockquote>
+
+	<blockquote>
+<a href="#vcmacro">Visual C++의 매크로 파일 이름 지정 시 주의 사항 </a></blockquote>
+
+	<blockquote>
+<a href="#vidgallery">Visual InterDev에서 갤러리 예제를 만들 경우</a></blockquote>
+
+	<blockquote>
+<a href="#vfpcontrol">Visual FoxPro의 ControlSource 속성에서 한글 입력 시 문제</a></blockquote>
+
+	<blockquote>
+<a href="#vfpdialog">Visual FoxPro의 View Designer에서 저장 대화 상자의 닫기 단추 오류</a></blockquote>
+	
+	</div>
+	
+<h5><a class=ex href="#" title="내용을 보거나 숨기려면 여기를 누릅니다." id="viewerissues">Visual Studio 도움말 뷰어 문제</a></h5>
+
+<div id="viewerissuesChild">
+	<blockquote>
+<a href="#samplecodecopynpaste">예제 코드의 자르기와 붙여넣기가 때때로 올바르게 실행되지 않는 경우</a></blockquote> 
+	
+<blockquote><a href="#updatinghtmlhelpsdk">Visual Studio에 포함된 HTML Help SDK 버전을 사용자가 업데이트할 수 있음</a></blockquote> 
+	
+<blockquote><a href="#findinginfoonhtmltags">HTML Tag에 대한 정보 찾기</a></blockquote>
+
+<blockquote><a href="#helpforado">ADO 개체에 대한 도움말 찾기</a></blockquote>
+
+</div>
+<p>
+<h5>Visual Studio 제품군의 도움말 시스템에 대한 기타 문제는 아래를 참고하십시오.</h5>
+<p><a href="readmeDN.htm" title="readmeDN.htm으로 갑니다.">MSDN&trade;, Microsoft Developer Network Readme.</a></p>
+<p>
+
+<!------------------------------------------------->
+<h5>아래와 같은 Visual Studio 제품군의 제품을 구입한 경우에 특정 정보를 찾으려면 해당 제품 이름을 누르십시오.</h5>
+<p>
+<a href="readmeve.htm" title="VS Enterprise Edition Readme (readmeVE.htm)로 갑니다.">Microsoft&reg; Visual Studio&trade;, Enterprise Edition</a></p>
+<p>
+<a href="readmevb.htm" title="Visual Basic Readme (readmeVB.htm)로 갑니다.">Microsoft&reg; Visual Basic&reg;  </a></p>
+<p>
+<a href="readmevc.htm" title="Visual C++ Readme (readmeVC.htm)로 갑니다.">Microsoft&reg; Visual C++&reg; </a></p>
+<p>
+<a href="readmedt.htm" title="VS Database Tools Readme (readmeDT.htm)로 갑니다.">Microsoft&reg; Visual Database Tools&trade;</a></p>
+<p>
+<a href="readmevf.htm" title="VS FoxPro Readme (readmeVF.htm)로 갑니다.">Microsoft&reg;Visual FoxPro&trade;</a></p>
+<p>
+<a href="readmevi.htm" title="Visual InterDev Readme (readmeVI.htm)로 갑니다.">Microsoft&reg;Visual InterDev&trade;</a></p>
+<p>
+<a href="readmevj.htm" title="Visual J++ Technology Preview 2 (readmeVJ.htm)로 갑니다.">Microsoft&reg;Visual J++&trade;</a></p>
+<p>
+<a href="readmess.htm" title="Visual SourceSafe Readme (readmess.htm)로 갑니다.">Microsoft&reg;Visual SourceSafe&trade;</a></p>
+<p>
+<hr align=left color=black SIZE=1 width=640>
+
+<!------------------------목차--------------------->
+<!-- 1 절:일반적인 설치 정보-->
+
+<!---------------------------------->
+<!-- 2 절-->
+
+<h3><a name="vsissues">일반적인 Visual Studio 문제</a></h3>
+
+<p>이 절의 내용은 Visual Studio 제품군에 포함된 모든 제품이나 다수의 제품에 적용되며 온라인 설명서보다 최신의 내용입니다.</p>
+<br>
+          <!------------------------------------------------------>
+          <!--(Sec. 2) TOPIC 1-->
+
+<h4><a name="sqlserverdebugger">Microsoft SQL Server는 SQL Debugging을 위하여 &#34;시스템 계정&#34;이 아닌 유효한 사용자 계정에서만 실행해야 함</a></h4>
+<p>
+Microsoft SQL Server에서 디버깅을 가능하게 하려면 SQL Server에 이 버전의 서버쪽 Visual Studio 구성 요소를 설치해야 합니다. 또한 Microsoft SQL Server는 유효한 사용자 계정에서 실행해야 하며 &#34;시스템 계정&#34;에서는 실행할 수 없습니다. &#34;시스템 계정&#34;에서 SQL Server는 높은 보안 수준에서 실행되며 Microsoft SQL Debugger와 같은 원격 응용 프로그램과 통신할 수 없습니다.</p>
+SQL 디버깅을 위한 SQL Server 로그인 계정을 구성하려면
+<ol><li>
+[시작] 메뉴의 [설정]에서 [제어판]을 눌러서 엽니다.</li>
+<li>
+[서비스]를 두 번 눌러서 [MSSQLServer]를 선택한 후 [Startup]을 누릅니다.</li>
+<li>
+&#34;This Account&#34;(옵션)을 누른 후 로그인 ID에 유효한 사용자 계정과 암호를 설정합니다.</li>
+<li>
+[OK]를 눌러서 대화 상자를 닫고 구성 내용을 저장합니다.</li></ol>
+<p>
+<b>메모:</b> &nbsp;&nbsp;&nbsp;SQL Server를 디버깅할 때 발생하는 모든 오류는 이벤트 로그 파일에 나열되어 있습니다. 이 로그 파일을 사용하여 디버깅 과정에서 생기는 문제를 해결할 수 있습니다.</p>
+<br>
+          <!--------------------------------------------------->
+          <!--(Sec. 2) TOPIC 2-->
+		  
+<h4><a name="webregistration">웹에서 Visual Studio 6.0 제품 등록하기</a></h4>
+<p>
+Visual Studio 6.0 제품의 설치가 끝나면 설치 마법사가 온라인 등록 페이지로 안내합니다. 설치할 때 등록할 수 없으면 나중에 웹에서 등록할 수 있습니다. 등록 사이트의 위치는 <a href="http://www.microsoft.com/isapi/redir.dll?Prd=vstudio&Pver=98&Ar=register">http://www.microsoft.com/isapi/redir.dll?Prd=vstudio&amp;Pver=98&amp;Ar=register</a>입니다.
+</p>
+
+          <!--------------------------------------------------->
+          <!--(Sec. 2) TOPIC 3-->
+		  
+<h4><a name="viewinginwindows98">Windows 98에서 Visual Studio 창 보기 </a></h4>
+<p>
+Windows 98에서 Visual Studio 창 제목을 보려면 화면 색상 표시를 256색보다 높게 설정해야 합니다(16비트 이상의 색상이 필요함).</p>
+
+          <!--------------------------------------------------->
+          <!--(Sec. 2) TOPIC 4-->
+		  
+<h4><a name="vcmacro">Visual C++의 매크로 파일 이름 지정 시 주의 사항 </a></h4>
+<p>
+Visual C++에서 매크로를 사용하는 경우, 파일 이름에 MBCS 문자를 사용하지 마십시오. 이름에 한글과 같은 MBCS 문자를 사용한 매크로의 경우, 매크로를 기록하는 중에 동작을 중단하면 프로그램이 손상될 수 있습니다. 이를 사전에 방지하는 방법은 SBCS 문자(예:영어)만을 사용하는 것입니다. 이 문제는 Visual C++5.0에서도 마찬가지로 발생합니다.</p>
+
+          <!--------------------------------------------------->
+          <!--(Sec. 2) TOPIC 5-->
+		  
+<h4><a name="vidgallery">Visual InterDev에서 갤러리 예제를 만들 경우 </a></h4>
+<p>
+한글판 Internet Information Server 4.0/Personal Web Server와 Visual InterDev에서 갤러리 예제를 만들 경우, 데이터베이스 관련 .asp 파일이 올바르게 작동하지 않고 다음과 같은 오류 메지시를 보여 줍니다.</p>
+<blockquote>ADODB.Connection error '800a0bb9'</blockquote>
+<blockquote>The application is using arguments that are of the wrong type, are out of acceptable range, or are in conflict with one another.
+</blockquote>
+<P>
+이와 같은 경우의 해결 대안은 다음과 같습니다.</p>
+<p>
+(1) 다음과 같이 MMC에서 프로젝트의 APP 루트가 올바르게 설정되어 있는지 확인합니다.</p>
+<blockquote>[시작] -> [프로그램] -> [NT4 OP] -> [Internet Information Server] -> [인터넷 서비스 관리자]의 Default Web Sites에서 만들어진 갤러리 프로젝트를 선택합니다. 마우스 오른쪽 클릭으로 속성을 확인합니다. -> [디렉터리] 텝의 [응용프로그램 설정]그룹에서 [시작점]이 설정되어 있지 않으면 [Create]를 클릭합니다. [시작점]이 설정되어 있지 않으면 Name 상자가 사용 불가능 상태입니다. -> [확인]를 클릭합니다.
+</blockquote>
+<p>
+(2) Visual InterDev 연결 속성을 다음과 같이 설정합니다.</p>
+<blockquote>(Project Explorer에서 노드를 찾아서)global.asa -> DataEnvironment -> 해당 연결로 가서 등록 정보를 봅니다. -> [인증] 탭에서 [디자인 모드 인증 저장]을 선택하고, 사용자 이름은 admin으로 정합니다.
+</blockquote>
+
+          <!--------------------------------------------------->
+          <!--(Sec. 2) TOPIC 6-->
+		  
+<h4><a name="vfpcontrol">Visual FoxPro의 ControlSource 속성에서 한글 입력 시 문제</a></h4>
+<p>Visual FoxPro 6.0에서 ControlSoruce 속성을 적용할 수 있는 컨트롤 사용 시 한글을 입력하는 데 다음과 같은 문제가 있습니다.</p>
+<li>Black 커서가 지원이 안됩니다.</li>
+<li>삽입(Insert) 모드에서 한글을 입력하면 비정상적으로 입력이 됩니다.</li>
+<p>이 문제를 재현하려면:</p>
+<ol><li>ControlSource 속성이 적용되는 컨트롤(예:textbox, listbox...)을 폼으로 가져옵니다.</li>
+<li>Property window에서 ControlSource 속성을 선택합니다.</li>
+<li>입력란에서 한글을 입력합니다.</li></ol>
+<p>두 번째 문제의 대안은 겹쳐쓰기 모드에서 한글을 입력하는 것입니다.</p>
+
+          <!--------------------------------------------------->
+          <!--(Sec. 2) TOPIC 7-->
+		  
+<h4><a name="vfpdialog">Visual FoxPro의 View Designer에서 저장 대화 상자의 닫기 단추 오류</a></h4>
+<p>Visual FoxPro 6.0에서 View Designer 사용 시, 저장 대화 상자의 닫기 단추를 클릭하면 오류가 발생합니다. 이 문제를 재현하려면 다음과 같이 합니다.</p>
+<ol><li>View Designer에서 테이블을 하나 엽니다.</li>
+<li>View designer의 [Feilds] 탭에서 [Add All] 단추를 클릭하여 모든 필드를 [Selected fields]로 추가합니다.</li>
+<li>View designer를 닫기 위하여 대화 상자 오른쪽 상단의 창 닫기 단추를 클릭합니다.</li>
+<li>[Open] 대화 상자가 나타나며, [Cancel] 단추를 클릭하면 "File 'n.dbf' does not exit"라는 오류 메시지가 나타나며 Local View를 저장할 수 없습니다.</li></ol> 
+<p>이 문제의 대안으로는, 저장할 때 반드시 [File] 메뉴의 [Save] 또는 [Save As] 명령을 사용하는 것입니다.</p>
+
+<hr align=left color=black SIZE=1 width=320>
+<!------------------------->
+<!- 3 절-->
+
+<h3>도움말 뷰어 문제</h3>
+
+<p>이 절에서는 Visual Studio 6.0에 포함된 온라인 도움말 뷰어와 관련한 문제에 대해 설명합니다. Visual Studio 제품군의 도움말 시스템에 대한 내용을 보려면 
+<a href="readmeDN.htm" title="readmeDN.htm으로 갑니다.">MSDN&trade;, Microsoft Developer Network Readme</a>를 참고하십시오.</p>
+
+		  <!--------------------------------------------------->
+          <!--(Sec. 3) TOPIC 1-->
+		  
+<h4><a name="samplecodecopynpaste"> 예제 코드의 자르기와 붙여넣기가 때때로 올바르게 실행되지 않는 경우</a></h4>
+<p>
+MSDN Library Visual Studio 설명서에서 코드 편집기로 예제 코드를 복사하여 붙여넣을 때 줄 바꿈과 서식 정보가 올바르게 복사되지 않을 수도 있습니다. 이 문제를 해결하려면 다음 중 하나를 수행하십시오.</p>
+<ul><li>코드를 복사한 후 줄 바꿈을 수동으로 편집합니다.</li>
+<li>예제 코드의 소스를 보이게 하여 <B>&lt;pre&gt;</B>와 <B>&lt;/pre&gt;</B> 태그를 포함한 예제 코드 전체를 코드 편집기로 복사한 다음에 붙여넣은 파일에서 필요 없는 부분을 삭제합니다. </li>
+</ul>
+
+		  <!--------------------------------------------------->
+          <!--(Sec. 3) TOPIC 2-->
+		  
+<h4><a name="updatinghtmlhelpsdk">Visual Studio에 포함된 HTML Help SDK 버전을 사용자가 업데이트할 수 있음</a></h4>
+<p>
+Visual Studio 6.0에는 HTML Help SDK 버전이 포함되어 있으며 사용자가 업데이트할 수 있습니다. 최신 버전의 HTML Help SDK를 구하려면 <a href="http://www.microsoft.com/workshop/author/htmlhelp/">http://www.microsoft.com/workshop/author/htmlhelp</a> 웹 사이트를 방문하십시오.</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 3) TOPIC 3-->
+
+<h4><a name="findinginfoonhtmltags">HTML 태그에 대한 정보 찾기</a></h4>
+<p>
+HTML 태그는 키워드 색인에 포함되지 않으므로 F1 찾기로 액세스할 수 없습니다. HTML 태그에 대한 정보가 필요하면 온라인 설명서 목차를 사용합니다.</p>
+<p>MSDN Library Visual Studio 6.0 아이콘을 누른 다음 플랫폼 SDK 폴더를 열면 아래 위치에서 HTML Elements에 대한 참조를 찾을 수 있습니다.
+<table border="0" width="90%">
+<tr>
+    <td width="100%"><font face="굴림,verdana,arial,helvetica" SIZE=2>&nbsp;&raquo;&nbsp;플랫폼 SDK</font></td>
+</tr> 
+</table>
+<table border="0" width="90%"> 
+<tr>
+    <td width="5%">&nbsp;</td>
+    <td width="95%"><font face="굴림,verdana,arial,helvetica" SIZE=2>&raquo;&nbsp;인터넷/인트라넷/엑스트라넷 서비스</font></td>
+  </tr>
+</table>
+<table border="0" width="90%"> 
+  <tr>
+    <td width="10%">&nbsp;</td>
+    <td width="90%"><font face="굴림,verdana,arial,helvetica" SIZE=2>&raquo;&nbsp;Dynamic HTML</font></td>
+  </tr>
+</table>
+<table border="0" width="90%"> 
+  <tr>
+    <td width="15%">&nbsp;</td>
+    <td width="85%"><font face="굴림,verdana,arial,helvetica" SIZE=2>&raquo;&nbsp;DHTML References</font></td>
+  </tr>
+</table>
+<table border="0" width="90%"> 
+  <tr>
+    <td width="20%">&nbsp;</td>
+    <td width="80%"><font face="굴림,verdana,arial,helvetica" SIZE=2>&raquo;&nbsp;HTML References</font></td>
+  </tr>
+</table>
+<table border="0" width="90%"> 
+  <tr>
+    <td width="25%">&nbsp;</td>
+    <td width="75%"><font face="굴림,verdana,arial,helvetica" SIZE=2><b>&raquo;&nbsp;HTML Elements</b></font></td>
+  </tr>
+</table>
+<p>새로운 즐겨보기를 만들어서 전체 텍스트 검색에서 내용을 빨리 찾는데 사용할 수 있습니다. 
+<p><b>새로운 즐겨보기를 만들려면</b>
+<ol><li><i>MSDN Library Visual Studio 6.0</i>의 [보기] 메뉴에서 [즐겨보기 정의]를 누릅니다.</li>
+<li>[즐겨보기 정의] 대화 상자에서 다음 위치로 이동합니다.</li>
+<table border="0" width="90%">
+<tr>
+    <td width="100%"><font face="굴림,verdana,arial,helvetica" SIZE=2>&nbsp;&raquo;&nbsp;플랫폼 SDK</font></td>
+</tr> 
+</table>
+<table border="0" width="90%"> 
+<tr>
+    <td width="5%">&nbsp;</td>
+    <td width="95%"><font face="굴림,verdana,arial,helvetica" SIZE=2>&raquo;&nbsp;인터넷/인트라넷/엑스트라넷 서비스</font></td>
+  </tr>
+</table>
+<table border="0" width="90%"> 
+  <tr>
+    <td width="10%">&nbsp;</td>
+    <td width="90%"><font face="굴림,verdana,arial,helvetica" SIZE=2><b>&raquo;&nbsp;Internet Explorer 플랫폼 SDK</b></font></td>
+  </tr>
+</table>
+<li>[추가]를 눌러서 즐겨보기에 포함된 모든 폴더를 대화 상자의 오른쪽 창에 나타냅니다.</li>
+<li>[다른 이름으로 저장]에서 즐겨보기의 이름을 입력하고 [저장]을 누릅니다.</li></ol>
+<p><b>이 새로운 즐겨보기를 사용하여 검색 범위를 좁히려면</b>
+<ol><li>온라인 설명서의 왼쪽 창에서 [검색] 탭을 누릅니다.</li>
+<li>[활성화된 즐겨보기] 목록에서 방금 만든 즐겨보기의 이름을 누릅니다.</li>
+<li>[검색할 단어 입력] 상자에서 검색할 HTML 태그를 입력하고 [유사한 단어 찾기]를 선택합니다.</li>
+<li>[항목 목록]을 눌러서 검색을 시작합니다.</li>
+</ol>
+          <!--------------------------------------------------->
+          <!--(Sec. 3) TOPIC 4-->
+		  
+<h4><a name="#helpforado">ADO 개체에 대한 도움말 찾기</a></h4>
+<p>예를 들어 Visual Basic에서 Recordset, Connection, Command, Parameter, ADOR, RDS 및 RDS Server 개체와 같은 ADO 개체를 사용할 경우 개체나 그 개체의 속성, 이벤트, 메서드에 대해 문맥 인식 도움말을 사용할 수 없습니다. 즉, 개체에 대한 참조를 가지고 있고 그 기능 중 한 가지를 사용할 경우 코드를 선택하고 F1을 눌러도 도움말 항목이 표시되지 않습니다. 대신에 잘못된 항목이 나타나거나 &#34;키워드를 찾을 수 없습니다&#34;라는 메시지가 나타납니다. </p>
+<p>그러나 온라인 설명서 [색인]을 사용하여 모든 개체의 속성, 이벤트, 메서드에 대한 도움말을 사용할 수 있습니다.</p>
+<ol><li>MSDN 설명서 뷰어가 열리지 않으면 [도움말] 메뉴에서 [목차]를 누릅니다.</li>
+<li>[색인] 탭을 누릅니다.</li>
+<li>&#34;컬렉션,&#34; &#34;속성,&#34; &#34;이벤트,&#34; &#34;메서드&#34;라는 낱말을 적절하게 포함하여 속성이나 이벤트 또는 메서드의 이름을 입력합니다.</li>
+<li>사용할 수 있는 항목의 목록에서 제목에 &#34;ADO&#34;가 포함된 적절한 항목을 선택합니다.</li>
+</ol>
+<p>예를 들어 Recordset 개체의 Open 메서드에 대한 도움말을 얻으려면 &#34;Open 메서드&#34;를 입력한 후 목록에서 &#34;Open 메서드(ADO Recordset)&#34;를 선택합니다.</p>
+<blockquote><b>메모:</b> &nbsp;&nbsp;&nbsp; MSDN Library 목차를 살펴보면 ADO 개체 모델과 같은 기타 ADO 항목에 대한 추가 도움말도 찾을 수 있습니다. 찾는 방법은 [플랫폼 SDK]를 열고 [데이터베이스 및 메시징 서비스]아래에서 [Microsoft Data Access SDK]를 선택하십시오. </blockquote>
+
+<!--------------->
+
+
+
+</font>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
